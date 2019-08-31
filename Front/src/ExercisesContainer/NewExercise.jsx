@@ -9,15 +9,15 @@ class NewExercise extends Component {
                 <h1>Submit a new Excercise for the Gym</h1>
                 <h3>Your bros need you man.</h3>
                 <form>
-                    <input type="text" placeholder="category"></input>
+                    <input type="text" placeholder="category" name="category"></input>
                     <br></br>
-                    <input type="text" placeholder="name"></input>
+                    <input type="text" placeholder="name" name="name"></input>
                     <br></br>
-                    <input type="text" placeholder="equipment"></input>
+                    <input type="text" placeholder="equipment" name="equipment"></input>
                     <br></br>
-                    <input type="text" placeholder="duration"></input>
+                    <input type="text" placeholder="duration" name="duration"></input>
                     <br></br>
-                    <input type="text" placeholder="directions"></input>
+                    <input type="text" placeholder="directions" name ="directions"></input>
                     <br></br>
                     <input type="submit" value="submit to gym"></input>
                 </form>   
