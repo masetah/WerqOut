@@ -8,22 +8,22 @@ class UsersContainer extends Component {
             users:[],
         }
     }
-    // componentDidMount(){
-    //     console.log("component is mounting")
-    //     this.getUsers();
-    // }
-    // getUsers= async () => {
-    //     try{
-    //         const users =await fetch();
-    //         const parsedResponse = await workouts.json("http://localhost:9000/api/v1/users");
-    //         console.log(parsedResponse);
-    //         this.setState({
-    //             users: parsedResponse.data
-    //         })
-    //     }catch(err){
-    //         console.log(err)
-    //     }
-    // }
+    componentDidMount(){
+        console.log("component is mounting")
+        this.getUsers();
+    }
+    getUsers= async () => {
+        try{
+            const users =await fetch();
+            const parsedResponse = await users.json("http://localhost:9000/user");
+            console.log(parsedResponse);
+            this.setState({
+                users: parsedResponse.data
+            })
+        }catch(err){
+            console.log(err)
+        }
+    }
     render(){
         return(
             <div>
