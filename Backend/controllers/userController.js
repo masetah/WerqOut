@@ -44,27 +44,26 @@ router.post('/login', async (req, res) => {
 
 });
 
-
 router.post('/register', async (req, res) => {
 
   // Encrypt our password
-  const password = req.body.password;
+  // const password = req.body.password;
 
   // encrypt our password
-  const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
-  console.log(hashedPassword)
+  // const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+  // console.log(hashedPassword)
 
-  req.body.password = hashedPassword;
+  // req.body.password = hashedPassword;
 
-  // We create our use
+  // We create our user
   try {
       const createdUser = await User.create(req.body);
       console.log(createdUser, ' created user');
 
       // set info on the session
-      req.session.userId = createdUser._id;
-      req.session.username = createdUser.username;
-      req.session.logged = true;
+      // req.session.userId = createdUser._id;
+      // req.session.username = createdUser.username;
+      // req.session.logged = true;
 
       res.redirect('/users');
   } catch (err){

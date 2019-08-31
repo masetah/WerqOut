@@ -67,7 +67,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 # WerqOut
-
+<img src="flowchart.png" height="50" width="200">
 MVP
 This application will work as an interactive area for users to add their favorite exercises for others to view! 
 Users will also have the ability to see other users submissions and try these exercies on their own!
