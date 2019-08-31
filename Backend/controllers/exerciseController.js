@@ -5,9 +5,8 @@ const router = express.Router();
 // require Our Model - Remember Model is
 // a representation of our data
 // The model should capitalized
-const Exercise = require('../models/movie');
+const Exercise = require('../models/exercise');
 // Creating the index route
-// index route should show all the fruits
  router.get('/', async (req, res, next) => {
   // req.body this is from the fetch request
   console.log(req.body, ' this is get all')
