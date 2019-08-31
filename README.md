@@ -68,11 +68,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 # WerqOut
 <img src="flowchart.png" height="300" width="600">
-MVP
-This application will work as an interactive area for users to add their favorite exercises for others to view! 
-Users will also have the ability to see other users submissions and try these exercies on their own!
+<h3>MVP</h3>
+<p>This application will work as an interactive area for users to add their favorite exercises for others to view!</p> 
+<p>Users will also have the ability to see other users submissions and try these exercies on their own!</p>
 
-Additional features to be added:
-comments section for each exercise
-personal trainers submit entire workouts
-personal trainers have publicly viewable profile pages
+<h3>Additional features to be added:</h3>
+<ul>
+<li>comments section for each exercise</li>
+<li>personal trainers submit entire workouts</li>
+<li>personal trainers have publicly viewable profile pages</li>
+</ul>
