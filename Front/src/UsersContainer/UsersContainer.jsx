@@ -14,8 +14,8 @@ class UsersContainer extends Component {
     }
     getUsers= async () => {
         try{
-            const users =await fetch();
-            const parsedResponse = await users.json("http://localhost:9000/user");
+            const users =await fetch("http://localhost:9000/user");
+            const parsedResponse = await users.json();
             console.log(parsedResponse);
             this.setState({
                 users: parsedResponse.data
