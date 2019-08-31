@@ -11,9 +11,7 @@ const Exercise = require('../models/exercise');
   // req.body this is from the fetch request
   console.log(req.body, ' this is get all')
      try  {
-
       const allExercises = await Excercise.find();
-
       // This is the response to react
       res.json({
         status: {
@@ -36,14 +34,15 @@ router.post('/', async (req, res) => {
   try {
     console.log(req.body, ' this is req.body');
     const createdExercise = await Exercise.create(req.body);
-    console.log('response happening?')
+    console.log(createdExercise, ' created Exercise');
     res.json({
       status: {
             code: 201,
             message: "Resource successfully created"
           },
       data: createdExercise
-    });
+    },
+    );
 
   } catch(err){
     console.log(err);
@@ -53,7 +52,6 @@ router.post('/', async (req, res) => {
 
 router.get('/:id', async (req, res, next) => {
      try  {
-
         const foundExercise = await Exercise.findById(req.params.id);
         res.json({
           status: {

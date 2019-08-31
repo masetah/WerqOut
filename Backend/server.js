@@ -24,10 +24,10 @@ app.use(cors({
   origin: "http://localhost:3000"
 }));
 
-app.use((req, res, next) => {
-  console.log(req.session.userId)
-  next();
-})
+// app.use((req, res, next) => {
+//   console.log('this is req.session.userId', req.session.userId)
+//   next();
+// })
 
 // Require the controller after the middleware
 const ExerciseController = require('./controllers/exerciseController');
