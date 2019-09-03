@@ -1,17 +1,7 @@
-import React, {Component} from 'react';
+// import React from 'react';
 
-class ExercisesList extends Component {
-render() { 
-    return(
-        <div>
-            <h1>Welcome to the Gym.</h1>
-            <h3>Get swoll.</h3>
-        </div>
-    )
-}
-
-
-//const exercises = props.exercises.map(function(excercise){
+// function ExercisesList(props) {
+//     const exercises = props.exercises.map(function(excercise){
 //         return(
 //             <div key={exercises._id}>
 //                 <h3>{exercises.name}</h3>
@@ -23,6 +13,17 @@ render() {
 //             {exercies}
 //         </div>
 //     )
-}
+// }
+// render() { 
+//     return(
+//         <div>
+//             <h1>Welcome to the Gym.</h1>
+//             <h3>Get swoll.</h3>
+//         </div>
+//     )
+//}
 
-export default ExercisesList;
+
+
+
+//export default ExercisesList;

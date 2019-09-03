@@ -7,7 +7,6 @@ router.post('/login', async (req, res) => {
 
   // First query the database to see if the user exists
   try {
-
     const foundUser = await User.findOne({username: req.body.username});
     console.log(foundUser, ' foundUser');
 
@@ -22,7 +21,7 @@ router.post('/login', async (req, res) => {
       req.session.username = foundUser.username;
       req.session.logged = true;
 
-      res.redirect('/users')
+      res.redirect('/')
 
     } else {
       // send message back to client that
@@ -59,11 +58,26 @@ router.post('/register', async (req, res) => {
       // req.session.username = createdUser.username;
       // req.session.logged = true;
 
-      res.redirect('/users');
+      res.redirect('/');
   } catch (err){
     res.send(err)
   }
 
+});
+router.get('/:id', async (req, res) => {
+  try  {
+     const foundUser = await User.findById(req.body.id);
+     res.json({
+       status: {
+         code: 200,
+         message: "Success"
+       },
+       data: foundUser
+     });
+
+   } catch (err){
+     res.send(err);
+   }
 });
 
 

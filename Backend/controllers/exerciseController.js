@@ -1,12 +1,12 @@
 const express = require('express');
-// Next we set up the Router
+
+//Router
 const router = express.Router();
 
-// require Our Model - Remember Model is
-// a representation of our data
-// The model should capitalized
+//Model
 const Exercise = require('../models/exercise');
-// Creating the index route
+
+//Index Route
  router.get('/', async (req, res, next) => {
   // req.body this is from the fetch request
   console.log(req.body, ' this is get all')

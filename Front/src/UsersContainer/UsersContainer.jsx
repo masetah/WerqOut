@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import NewUser from './NewUser'
+import NewUser from './AuthGateway/Register/NewUser'
 
 class UsersContainer extends Component {
     constructor(){
@@ -14,7 +14,7 @@ class UsersContainer extends Component {
     }
     getUsers= async () => {
         try{
-            const users =await fetch("http://localhost:9000/user");
+            const users =await fetch("http://localhost:9000/users");
             const parsedResponse = await users.json();
             console.log(parsedResponse);
             this.setState({

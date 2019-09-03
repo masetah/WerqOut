@@ -34,7 +34,7 @@ const ExerciseController = require('./controllers/exerciseController');
 const UserController  = require('./controllers/userController');
 
 app.use('/api/v1/exercises', ExerciseController);
-app.use('/user', UserController);
+app.use('/users', UserController);
 
 app.listen(process.env.PORT || 9000, () => {
   console.log('listening on port 9000');

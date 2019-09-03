@@ -2,7 +2,25 @@ import React, {Component} from 'react';
 
 
 class NewExercise extends Component {
-    
+    constructor(){
+        super();
+        this.state = {
+            category: "",
+            name:"", 
+            equipment:"",
+            duration: "",
+            directions:""
+        }
+    }
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name] : e.target.value
+        })
+    }
+    handleSubmit = (e)=> {
+        e.preventDefault();
+        this.props.createExercise(this.state);
+    }
     render(){
         return(
             <div>
