@@ -1,19 +1,22 @@
-// import React from 'react';
+import React from 'react';
 
-// function ExercisesList(props) {
-//     const exercises = props.exercises.map(function(excercise){
-//         return(
-//             <div key={exercises._id}>
-//                 <h3>{exercises.name}</h3>
-//             </div>
-//         )
-//     })
-//     return(
-//         <div>
-//             {exercies}
-//         </div>
-//     )
-// }
+function ExercisesList(props) {
+                
+    const exercises = props.exercises.map(function(exercises){
+        return(
+            <div key={exercises._id}> 
+                <h3>{exercises.name}</h3>
+                <p>Equipment: {exercises.equipment}</p>
+                <p>Directions: {exercises.directions}</p>
+            </div>
+        )
+    })
+    return(
+        <div>
+            {exercises}
+        </div>
+    )
+}
 // render() { 
 //     return(
 //         <div>
@@ -26,4 +29,4 @@
 
 
 
-//export default ExercisesList;
+export default ExercisesList;

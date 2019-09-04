@@ -64,22 +64,6 @@ router.post('/register', async (req, res) => {
   }
 
 });
-router.get('/:id', async (req, res) => {
-  try  {
-     const foundUser = await User.findById(req.body.id);
-     res.json({
-       status: {
-         code: 200,
-         message: "Success"
-       },
-       data: foundUser
-     });
-
-   } catch (err){
-     res.send(err);
-   }
-});
-
 
 router.get('/logout', (req, res) => {
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import ExercisesList from './ExercisesList'
+import ExercisesList from './ExercisesList'
 import NewExercise from './NewExercise'
 
 class ExercisesContainer extends Component {
@@ -90,7 +90,10 @@ class ExercisesContainer extends Component {
         return(
             <div>
                 <NewExercise/>
-                {/* <ExercisesList/> */}
+                
+                <h1>Welcome to the Gym!</h1>
+                <h2>Check out some great exercise ideas here!</h2>
+                <ExercisesList exercises={this.state.exercises} />
             </div>
             )
     }

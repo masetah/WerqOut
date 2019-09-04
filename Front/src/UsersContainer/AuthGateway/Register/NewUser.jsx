@@ -7,19 +7,19 @@ class NewUser extends Component {
                 <h1>You new here?</h1>
                 <h3>Register here bro.</h3>
             <form>
-                <input type="radio" name="trainer" value="true"></input>
+                <input type="radio" name="trainer" value="true"/>
                 <br></br>
-                <input type="radio" name="trainer" value="false"></input>
+                <input type="radio" name="trainer" value="false"/>
                 <br></br>
-                <input type="text" placeholder="username" name="username"></input>
+                <input type="text" placeholder="username" name="username"/>
                 <br></br>
-                <input type="password" placeholder="password" name="password"></input>
+                <input type="password" placeholder="password" name="password"/>
                 <br></br>
-                <input type="password" placeholder="confirm password" name="confpassword"></input>
+                <input type="password" placeholder="confirm password" name="confpassword"/>
                 <br></br>
-                <input type="textarea" placeholder="Tell us about yourself" name="about"></input>
+                <input type="textarea" placeholder="Tell us about yourself" name="about"/>
                 <br></br>
-                <input type="submit" value="Register Now"></input>
+                <input type="submit" value="Register Now"/>
             </form>
             </div>
         )

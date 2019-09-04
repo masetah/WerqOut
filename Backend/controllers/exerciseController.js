@@ -11,7 +11,7 @@ const Exercise = require('../models/exercise');
   // req.body this is from the fetch request
   console.log(req.body, ' this is get all')
      try  {
-      const allExercises = await Excercise.find();
+      const allExercises = await Exercise.find();
       // This is the response to react
       res.json({
         status: {
@@ -22,9 +22,9 @@ const Exercise = require('../models/exercise');
       });
 
     } catch (err){
-
+      console.log(err, "This is res.send error in exercisesContainer.js")
       res.send(err)
-
+      
     }
 });
 
