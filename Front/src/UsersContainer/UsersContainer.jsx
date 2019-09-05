@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import NewUser from './AuthGateway/Register/NewUser'
+import NewUser from '../AuthGateway/Register/NewUser'
 
 class UsersContainer extends Component {
     constructor(){
@@ -36,7 +36,6 @@ class UsersContainer extends Component {
                     <br></br>
                     <input type="submit" value="Login"></input>
                 </form>
-                <NewUser/>
              </div>   
             )
     }
