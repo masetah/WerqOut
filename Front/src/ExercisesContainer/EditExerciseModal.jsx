@@ -25,7 +25,7 @@ handleChange = (e) => {
 }
 handleSubmit = (e)=> {
     e.preventDefault();
-    this.props.updateMovie(this.props.id, this.state);
+    this.props.updateExercise(this.props.id, this.state);
 }
   render() {
     return (
@@ -35,11 +35,11 @@ handleSubmit = (e)=> {
           <ModalHeader toggle={this.toggle}>Edit Your Exercise</ModalHeader>
           <ModalBody>
             <form onSubmit={this.handleSubmit}>
-                <input type="text" name="category" placeholder={this.props.exerciseCategory} onChange={this.handleChange}></input>
-                <input type="text" name="category" placeholder={this.props.exerciseName} onChange={this.handleChange}></input>
-                <input type="text" name="category" placeholder={this.props.exerciseEquipment} onChange={this.handleChange}></input>
-                <input type="text" name="category" placeholder={this.props.exerciseDuration} onChange={this.handleChange}></input>
-                <input type="text" name="category" placeholder={this.props.exerciseDirections} onChange={this.handleChange}></input>
+                <input type="text" name="category" value={this.props.exerciseCategory} onChange={this.handleChange}></input>
+                <input type="text" name="category" value={this.props.exerciseName} onChange={this.handleChange}></input>
+                <input type="text" name="category" value={this.props.exerciseEquipment} onChange={this.handleChange}></input>
+                <input type="text" name="category" value={this.props.exerciseDuration} onChange={this.handleChange}></input>
+                <input type="text" name="category" value={this.props.exerciseDirections} onChange={this.handleChange}></input>
                 <input type="submit" value="Update Exercise" ></input>
             </form>
           </ModalBody>
