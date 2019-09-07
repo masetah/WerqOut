@@ -9,7 +9,7 @@ class AuthGateway extends Component {
         render(){
             return(
                 <div>
-                    <Login/>
+                    <Login handleLogin={this.props.handleLogin}/>
                     <NewUser handleRegister={this.props.handleRegister}/>
                 </div>
             )

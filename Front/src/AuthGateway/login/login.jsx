@@ -4,7 +4,7 @@ class Login extends Component {
     constructor(){
         super();
         this.state = {
-            email:"",
+            username:"",
             password:"",
         }
     }
@@ -16,7 +16,7 @@ class Login extends Component {
 
     handleSubmit=(e)=>{
         e.preventDefault();
-        this.props.findUser(this.state);
+        this.props.handleLogin(this.state);
     }
     
     render(){

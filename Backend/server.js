@@ -6,6 +6,12 @@ const session        = require('express-session')
 
 require('./db/db');
 
+// CORS allows requests to come in from React
+app.use(cors({
+  credentials: true,
+  origin: "http://localhost:3000"
+}));
+
 app.use(session({
   secret: 'keep it secret',
   resave: false,
@@ -15,12 +21,6 @@ app.use(session({
 // SET UP CORS AS MIDDLEWARE, SO any client can make a request to our server
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
-// CORS allows requests to come in from React
-app.use(cors({
-  credential: true,
-  origin: "http://localhost:3000"
-}));
 
 app.use((req, res, next) => {
   console.log('this is req.session.userId', req.session.userId)

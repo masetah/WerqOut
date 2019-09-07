@@ -59,9 +59,8 @@ router.post('/register', async (req, res) => {
         status: {
           code:201
         },
-        //data:createdUser
+        data:createdUser
       })
-      res.redirect('/');
 
   } catch (err){
     res.send(err)

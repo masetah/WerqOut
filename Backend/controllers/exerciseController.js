@@ -9,9 +9,9 @@ const Exercise = require('../models/exercise');
 //Index Route
  router.get('/', async (req, res, next) => {
   // req.body this is from the fetch request
-  console.log(req.body, ' this is get all')
+  // console.log(req.body, ' this is get all')
      try  {
-      const allExercises = await Exercise.find();
+      const allExercises = await Exercise.find().populate('user');
       // This is the response to react
       res.json({
         status: {
@@ -33,6 +33,7 @@ router.post('/', async (req, res) => {
 
   try {
     console.log(req.body, ' this is req.body');
+    req.body.user = req.session.UserId;
     const createdExercise = await Exercise.create(req.body);
     console.log(createdExercise, ' created Exercise');
     res.json({

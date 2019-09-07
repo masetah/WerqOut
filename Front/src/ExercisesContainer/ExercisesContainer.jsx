@@ -18,7 +18,7 @@ class ExercisesContainer extends Component {
         try{
             const newExercise = await fetch('http://localhost:9000/api/v1/exercises',{
                 method: "POST",
-                // credentials: "include",
+                credentials: "include",
                 body:JSON.stringify(formData),
                 headers:{
                     "Content-Type": "application/json",
@@ -54,7 +54,7 @@ class ExercisesContainer extends Component {
     updateExercise = async (id, formData) => {
         const updatedExercise = await fetch(`http://localhost:9000/api/v1/exercises/${id}`, {
             method: "PUT",
-            //credentials: "include",
+            credentials: "include",
             body: JSON.stringify(formData),
             headers: {
                 "Content-Type": "application/json"
@@ -75,7 +75,7 @@ class ExercisesContainer extends Component {
     getExcercises= async () => {
         try{
             const exercises = await fetch('http://localhost:9000/api/v1/exercises', {
-                //credentials: "include",
+                credentials: "include",
             } );
             const parsedResponse = await exercises.json();
             console.log(parsedResponse);
@@ -89,8 +89,7 @@ class ExercisesContainer extends Component {
     render(){
         return(
             <div>
-                <NewExercise/>
-                
+                <NewExercise createExercise={this.state.createExercise}/>
                 <h1>Welcome to the Gym!</h1>
                 <h2>Check out some great exercise ideas here!</h2>
                 <ExercisesList exercises={this.state.exercises} />

@@ -6,6 +6,7 @@ function ExercisesList(props) {
         return(
             <div key={exercises._id}> 
                 <h3>{exercises.name}</h3>
+                <p>submitted by: {exercises.user} </p>
                 <p>Equipment: {exercises.equipment}</p>
                 <p>Directions: {exercises.directions}</p>
             </div>

@@ -11,16 +11,38 @@ class App extends React.Component {
       username: null
     }
   }
-
-  handleRegister = async (formData) => {
+  handleLogin = async (formData) => {
     try{
-    const registerUser = await fetch('http://localhost:9000/users/register',{
+    const loginUser = await fetch('http://localhost:9000/users/login',{
 
       method: "POST",
       body:JSON.stringify(formData),
       //credentials:"include",
       headers: {
-        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json"
+      }
+    })
+    const parsedResponse = await loginUser.json();
+    console.log(parsedResponse, "parsedResonse")
+    if(parsedResponse.status.code===201){
+      console.log("SUCCESSFUL login");
+      this.setState({
+        loggedIn: true, 
+        username: parsedResponse.data.username
+      })
+    }
+  }catch(err){
+    console.log(err)
+  }
+}
+  handleRegister = async (formData) => {
+    try{
+    const registerUser = await fetch('http://localhost:9000/users/register',{
+      method: "POST",
+      body:JSON.stringify(formData),
+      credentials:"include",
+      headers: {
+        // "Accept": "application/json, text/plain, */*",
         "Content-Type": "application/json"
       }
     })
@@ -44,7 +66,7 @@ class App extends React.Component {
         {
           this.state.loggedIn ?
           <ExercisesContainer/> :
-          <AuthGateway handleRegister={this.handleRegister}/>
+          <AuthGateway handleRegister={this.handleRegister} handleLogin={this.handleLogin}/>
         }
       </div>
     );

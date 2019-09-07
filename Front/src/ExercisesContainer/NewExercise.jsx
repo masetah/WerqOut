@@ -26,16 +26,16 @@ class NewExercise extends Component {
             <div>
                 <h1>Submit a new Excercise for the Gym</h1>
                 <h3>Your bros need you man.</h3>
-                <form>
-                    <input type="text" placeholder="category" name="category"></input>
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" placeholder="category" name="category" onChange={this.handleChange}></input>
                     <br></br>
-                    <input type="text" placeholder="name" name="name"></input>
+                    <input type="text" placeholder="name" name="name" onChange={this.handleChange}></input>
                     <br></br>
-                    <input type="text" placeholder="equipment" name="equipment"></input>
+                    <input type="text" placeholder="equipment" name="equipment" onChange={this.handleChange}></input>
                     <br></br>
-                    <input type="text" placeholder="duration" name="duration"></input>
+                    <input type="text" placeholder="duration" name="duration" onChange={this.handleChange}></input>
                     <br></br>
-                    <input type="text" placeholder="directions" name ="directions"></input>
+                    <input type="text" placeholder="directions" name ="directions" onChange={this.handleChange}></input>
                     <br></br>
                     <input type="submit" value="submit to gym"></input>
                 </form>   
