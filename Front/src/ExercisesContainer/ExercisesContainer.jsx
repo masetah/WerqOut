@@ -25,6 +25,7 @@ class ExercisesContainer extends Component {
                 }
             })
         const parsedResponse = await newExercise.json();
+        console.log(parsedResponse)
         if(parsedResponse.status.code ===201){
             this.setState({
                 exercises: [...this.state.exercises, parsedResponse.data]
@@ -41,7 +42,7 @@ class ExercisesContainer extends Component {
             method:'DELETE',
             credentials: "include",
         });
-        const parsedResponse =await deleteExercise.json();
+        const parsedResponse = await deleteExercise.json();
         if(parsedResponse.status.code===200){
             this.setState({
                 exercises: this.state.exercises.filter((exercise,i) =>exercise._id !==id)
@@ -89,10 +90,14 @@ class ExercisesContainer extends Component {
     render(){
         return(
             <div>
-                <NewExercise createExercise={this.state.createExercise}/>
+                <NewExercise createExercise={this.createExercise} />
                 <h1>Welcome to the Gym!</h1>
                 <h2>Check out some great exercise ideas here!</h2>
-                <ExercisesList exercises={this.state.exercises} />
+                <ExercisesList 
+                exercises={this.state.exercises} 
+                deleteExercise={this.deleteExercise}
+                updateExercise={this.updateExercise}
+                />
             </div>
             )
     }

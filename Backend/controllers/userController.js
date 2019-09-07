@@ -4,7 +4,7 @@ const User    = require('../models/user');
 const bcrypt  = require('bcryptjs');
 
 router.post('/login', async (req, res) => {
-
+console.log("user controller line 7",req.body)
   // First query the database to see if the user exists
   try {
     const foundUser = await User.findOne({username: req.body.username});
@@ -16,18 +16,25 @@ router.post('/login', async (req, res) => {
 
     // bcrypt compare returns true // or false
     if(bcrypt.compareSync(req.body.password, foundUser.password)){
-       // if valid, we'll set the session
+      console.log("PASSWORD MATCHED") 
+      // if valid, we'll set the session
       req.session.userId = foundUser._id;
       req.session.username = foundUser.username;
       req.session.logged = true;
-
-      res.redirect('/')
+      
+      res.json({
+        status: {
+          code:201
+        },
+        data:foundUser
+      })
+      //res.redirect('/')
 
     } else {
       // send message back to client that
       // the username or password is incorrect
       req.session.message = 'Username or Password incorrect';
-      res.redirect('/');
+      //res.redirect('/');
     }
   }
   } catch(err){

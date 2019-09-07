@@ -1,4 +1,5 @@
 import React from 'react';
+import UpdateExercise from './EditExerciseModal'
 
 function ExercisesList(props) {
                 
@@ -9,6 +10,17 @@ function ExercisesList(props) {
                 <p>submitted by: {exercises.user} </p>
                 <p>Equipment: {exercises.equipment}</p>
                 <p>Directions: {exercises.directions}</p>
+                <button onClick={()=>{
+          props.deleteExercise(exercises._id)
+          }}>Delete</button>
+          <UpdateExercise 
+          updateExercise={props.updateExercise} 
+          exerciseCategory={exercises.category}
+          exerciseName={exercises.name}
+          exerciseEquipment={exercises.equipment}
+          exerciseDuration={exercises.duration}
+          exerciseDirections={exercises.directions}     
+          id={exercises._id}/>
             </div>
         )
     })

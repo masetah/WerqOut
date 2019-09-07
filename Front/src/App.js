@@ -17,7 +17,7 @@ class App extends React.Component {
 
       method: "POST",
       body:JSON.stringify(formData),
-      //credentials:"include",
+      credentials:"include",
       headers: {
         "Content-Type": "application/json"
       }
