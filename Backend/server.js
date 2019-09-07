@@ -6,7 +6,6 @@ const session        = require('express-session')
 
 require('./db/db');
 
-
 app.use(session({
   secret: 'keep it secret',
   resave: false,
@@ -17,17 +16,16 @@ app.use(session({
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-
 // CORS allows requests to come in from React
 app.use(cors({
   credential: true,
   origin: "http://localhost:3000"
 }));
 
-// app.use((req, res, next) => {
-//   console.log('this is req.session.userId', req.session.userId)
-//   next();
-// })
+app.use((req, res, next) => {
+  console.log('this is req.session.userId', req.session.userId)
+  next();
+})
 
 // Require the controller after the middleware
 const ExerciseController = require('./controllers/exerciseController');

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 // that is automatically created
-mongoose.connect('mongodb://localhost/werqOut', {
+mongoose.connect('mongodb://localhost:27017/werqOut', {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false

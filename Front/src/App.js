@@ -13,24 +13,30 @@ class App extends React.Component {
   }
 
   handleRegister = async (formData) => {
+    try{
     const registerUser = await fetch('http://localhost:9000/users/register',{
+
       method: "POST",
       body:JSON.stringify(formData),
-      // credentials:"include",
+      //credentials:"include",
       headers: {
+        "Accept": "application/json, text/plain, */*",
         "Content-Type": "application/json"
       }
     })
     const parsedResponse = await registerUser.json();
-    console.log(parsedResponse)
+    console.log(parsedResponse, "parsedResonse")
     if(parsedResponse.status.code===201){
       console.log("SUCCESSFUL REGISTRATION");
       this.setState({
-        LoggedIn: true, 
+        loggedIn: true, 
         username: parsedResponse.data.username
       })
     }
+  }catch(err){
+    console.log(err)
   }
+}
 
   render(){
     return (

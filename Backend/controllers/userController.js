@@ -29,12 +29,10 @@ router.post('/login', async (req, res) => {
       req.session.message = 'Username or Password incorrect';
       res.redirect('/');
     }
-
   }
   } catch(err){
     res.send(err);
   }
-
 });
 
 router.post('/register', async (req, res) => {
@@ -61,7 +59,7 @@ router.post('/register', async (req, res) => {
         status: {
           code:201
         },
-        data:createdUser
+        //data:createdUser
       })
       res.redirect('/');
 
