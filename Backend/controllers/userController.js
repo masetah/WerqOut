@@ -44,16 +44,13 @@ console.log("user controller line 7",req.body)
 
 router.post('/register', async (req, res) => {
 
-  // Encrypt our password
+  // Encrypt password
   const password = req.body.password;
-
-  // encrypt our password
   const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
   console.log(hashedPassword)
-
   req.body.password = hashedPassword;
 
-  // We create our user
+  // Create user
   try {
       const createdUser = await User.create(req.body);
       console.log(createdUser, ' created user');
@@ -75,12 +72,12 @@ router.post('/register', async (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-
+console.log('SESSION ENDED')
   req.session.destroy((err) => {
     if(err){
       res.send(err);
     } else {
-      res.redirect('/');// back to the homepage
+      res.redirect('http://localhost:3000/');// back to the homepage
     }
   })
 

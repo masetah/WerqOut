@@ -15,12 +15,7 @@ function ExercisesList(props) {
           }}>Delete</button>
           <UpdateExercise 
           updateExercise={props.updateExercise}
-          exercises= {exercises} 
-        //   exerciseCategory={exercises.category}
-        //   exerciseName={exercises.name}
-        //   exerciseEquipment={exercises.equipment}
-        //   exerciseDuration={exercises.duration}
-        //   exerciseDirections={exercises.directions}     
+          exercises= {exercises}    
           id={exercises._id}/>
             </div>
         )
@@ -31,16 +26,5 @@ function ExercisesList(props) {
         </div>
     )
 }
-// render() { 
-//     return(
-//         <div>
-//             <h1>Welcome to the Gym.</h1>
-//             <h3>Get swoll.</h3>
-//         </div>
-//     )
-//}
-
-
-
 
 export default ExercisesList;

@@ -41,7 +41,6 @@ handleSubmit = (e)=> {
                 Equpment Used: <input type="text" name="equipment" value={this.state.equipment} onChange={this.handleChange}></input><br></br>
                 Recomended Duration: <input type="text" name="duration" value={this.state.duration} onChange={this.handleChange}></input><br></br>
                 Directions: <textarea name="directions" value={this.state.directions} onChange={this.handleChange}></textarea><br></br>
-                {/* <input type="submit" value="Update Exercise" ></input> */}
             </form>
           </ModalBody>
           <ModalFooter>

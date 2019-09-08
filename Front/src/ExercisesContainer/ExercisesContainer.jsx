@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ExercisesList from './ExercisesList'
 import NewExercise from './NewExercise'
+import Navigation from '../Navbar/Navigation'
 
 class ExercisesContainer extends Component {
     constructor(){
@@ -90,6 +91,7 @@ class ExercisesContainer extends Component {
     render(){
         return(
             <div>
+                <Navigation/>
                 <NewExercise createExercise={this.createExercise} />
                 <h1>Welcome to the Gym!</h1>
                 <h2>Check out some great exercise ideas here!</h2>
