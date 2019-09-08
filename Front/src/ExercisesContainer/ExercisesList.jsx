@@ -14,12 +14,13 @@ function ExercisesList(props) {
           props.deleteExercise(exercises._id)
           }}>Delete</button>
           <UpdateExercise 
-          updateExercise={props.updateExercise} 
-          exerciseCategory={exercises.category}
-          exerciseName={exercises.name}
-          exerciseEquipment={exercises.equipment}
-          exerciseDuration={exercises.duration}
-          exerciseDirections={exercises.directions}     
+          updateExercise={props.updateExercise}
+          exercises= {exercises} 
+        //   exerciseCategory={exercises.category}
+        //   exerciseName={exercises.name}
+        //   exerciseEquipment={exercises.equipment}
+        //   exerciseDuration={exercises.duration}
+        //   exerciseDirections={exercises.directions}     
           id={exercises._id}/>
             </div>
         )
