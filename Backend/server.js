@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-  console.log('this is req.session.userId', req.session.userId)
+  //console.log('this is req.session.userId', req.session.userId)
   next();
 })
 

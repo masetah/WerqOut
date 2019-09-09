@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-
 class NewExercise extends Component {
     constructor(){
         super();
@@ -20,6 +19,13 @@ class NewExercise extends Component {
     handleSubmit = (e)=> {
         e.preventDefault();
         this.props.createExercise(this.state);
+        // this.setState({
+        //     category: "",
+        //     name:"", 
+        //     equipment:"",
+        //     duration: "",
+        //     directions:""
+        // })
     }
     render(){
         return(
@@ -35,7 +41,7 @@ class NewExercise extends Component {
                     <br></br>
                     <input type="text" placeholder="duration" name="duration" onChange={this.handleChange}></input>
                     <br></br>
-                    <input type="text" placeholder="directions" name ="directions" onChange={this.handleChange}></input>
+                    <textarea placeholder="directions" name ="directions" onChange={this.handleChange}></textarea>
                     <br></br>
                     <input type="submit" value="submit to gym"></input>
                 </form>   

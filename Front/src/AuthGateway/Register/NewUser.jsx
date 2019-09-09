@@ -11,6 +11,7 @@ class NewUser extends Component {
             about:""
         }
     }
+    
     handleChange=(e)=>{
         this.setState({
             [e.target.name]:e.target.value
@@ -36,7 +37,7 @@ class NewUser extends Component {
                 <br></br>
                 <input type="password" placeholder="confirm password" name="confpassword" onChange={this.handleChange}/>
                 <br></br>
-                <input type="textarea" placeholder="Tell us about yourself" name="about" onChange={this.handleChange}/>
+                <textarea placeholder="Tell us about yourself" name="about" onChange={this.handleChange}/>
                 <br></br>
                 <input type="submit" value="Register Now"/>
             </form>

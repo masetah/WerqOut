@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
 
   try {
     console.log(req.body, ' this is req.body');
-    req.body.user = req.session.UserId;
+    req.body.user = req.session.userId;
     const createdExercise = await Exercise.create(req.body);
     console.log(createdExercise, ' created Exercise');
     res.json({

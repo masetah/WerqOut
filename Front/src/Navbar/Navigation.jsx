@@ -30,30 +30,39 @@ class Navigation extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="http://localhost:9000/users/logout">Logout</NavbarBrand>
+          <NavbarBrand href="http://localhost:3000/">Home</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink href="/components/">Profile</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink href="https://github.com/reactstrap/reactstrap">Contact</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  Menu
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Option 1
+                    Cardio
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                    Core
+                  </DropdownItem>
+                  <DropdownItem>
+                    Strength
+                  </DropdownItem>
+                  <DropdownItem>
+                    Functional
+                  </DropdownItem>
+                  <DropdownItem>
+                    Flexability
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
+                  <DropdownItem href="http://localhost:9000/users/logout">
+                    Logout
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>

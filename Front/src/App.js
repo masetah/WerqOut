@@ -17,7 +17,7 @@ class App extends React.Component {
 
       method: "POST",
       body:JSON.stringify(formData),
-      credentials:"include",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json"
       }
@@ -40,9 +40,8 @@ class App extends React.Component {
     const registerUser = await fetch('http://localhost:9000/users/register',{
       method: "POST",
       body:JSON.stringify(formData),
-      credentials:"include",
+      credentials: "include",
       headers: {
-        // "Accept": "application/json, text/plain, */*",
         "Content-Type": "application/json"
       }
     })

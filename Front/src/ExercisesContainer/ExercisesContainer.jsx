@@ -81,9 +81,11 @@ class ExercisesContainer extends Component {
             } );
             const parsedResponse = await exercises.json();
             console.log(parsedResponse);
-            this.setState({
-                exercises: parsedResponse.data
-            })
+            if(parsedResponse.status.code === 200){
+                this.setState({
+                    exercises: parsedResponse.data
+                })
+            }
         }catch(err){
             console.log(err)
         }

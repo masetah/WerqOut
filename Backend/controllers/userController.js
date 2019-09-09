@@ -5,19 +5,17 @@ const bcrypt  = require('bcryptjs');
 
 router.post('/login', async (req, res) => {
 console.log("user controller line 7",req.body)
-  // First query the database to see if the user exists
+  // LOGIN USER
   try {
     const foundUser = await User.findOne({username: req.body.username});
     console.log(foundUser, ' foundUser');
 
-     // If the user exists we'll use bcrypt to see if their password
-  // is valid
+//Password validation
   if(foundUser){
-
     // bcrypt compare returns true // or false
     if(bcrypt.compareSync(req.body.password, foundUser.password)){
       console.log("PASSWORD MATCHED") 
-      // if valid, we'll set the session
+      // Set Session
       req.session.userId = foundUser._id;
       req.session.username = foundUser.username;
       req.session.logged = true;
@@ -28,13 +26,9 @@ console.log("user controller line 7",req.body)
         },
         data:foundUser
       })
-      //res.redirect('/')
-
-    } else {
-      // send message back to client that
-      // the username or password is incorrect
-      req.session.message = 'Username or Password incorrect';
-      //res.redirect('/');
+    }else {
+      req.session.message = 'Username or Password incorrect, try again';
+      res.redirect('/');
     }
   }
   } catch(err){
@@ -43,18 +37,24 @@ console.log("user controller line 7",req.body)
 });
 
 router.post('/register', async (req, res) => {
-
+if(req.body.password===req.body.confpassword){
   // Encrypt password
   const password = req.body.password;
   const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
   console.log(hashedPassword)
   req.body.password = hashedPassword;
 
-  // Create user
+  // Encrypt confpassword
+  const confpassword = req.body.confpassword;
+  const hashedConfPassword = bcrypt.hashSync(confpassword, bcrypt.genSaltSync(10));
+  console.log(hashedConfPassword)
+  req.body.confpassword = hashedConfPassword;
+
+  // CREATE USER
   try {
       const createdUser = await User.create(req.body);
       console.log(createdUser, ' created user');
-      // set info on the session
+      // Session
       req.session.userId = createdUser._id;
       req.session.username = createdUser.username;
       req.session.logged = true;
@@ -68,19 +68,22 @@ router.post('/register', async (req, res) => {
 
   } catch (err){
     res.send(err)
+  }}else{
+    req.session.message = 'Username is already taken or Passwords do not match, try again';
+    res.redirect('/');
   }
 });
 
+//Log user out (End Session)
 router.get('/logout', (req, res) => {
 console.log('SESSION ENDED')
   req.session.destroy((err) => {
     if(err){
       res.send(err);
     } else {
-      res.redirect('http://localhost:3000/');// back to the homepage
+      res.redirect('http://localhost:3000/');
     }
   })
-
 })
 
 module.exports = router;
