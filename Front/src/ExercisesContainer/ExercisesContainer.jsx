@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import ExercisesList from './ExercisesList'
 import NewExercise from './NewExercise'
-import Navigation from '../Navbar/Navigation'
-
+import Navigation from '../Components/Navigation'
+import {Route} from 'react-router-dom'
+import Contact from '../Components/Contact'
+import UserProfile from '../Components/UserProfile'
 class ExercisesContainer extends Component {
     constructor(){
         super()
@@ -102,8 +104,12 @@ class ExercisesContainer extends Component {
                 deleteExercise={this.deleteExercise}
                 updateExercise={this.updateExercise}
                 />
+                <main>
+                    <Route exact path="/contact" component={Contact}/>
+                    <Route exact path="/profile" component={UserProfile}/>
+                </main>
             </div>
-            )
+        )
     }
 }
 

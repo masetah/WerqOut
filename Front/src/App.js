@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import ExercisesContainer from './ExercisesContainer/ExercisesContainer'
-import  AuthGateway from './AuthGateway/AuthGateway.jsx'
+import  AuthGateway from './AuthGateway/AuthGateway'
+import Home from './HOME/Home.jsx'
 
-class App extends React.Component {
+class App extends Component {
   constructor(){
     super();
     this.state = {
@@ -11,6 +12,7 @@ class App extends React.Component {
       username: null
     }
   }
+
   handleLogin = async (formData) => {
     try{
     const loginUser = await fetch('http://localhost:9000/users/login',{
@@ -35,6 +37,7 @@ class App extends React.Component {
     console.log(err)
   }
 }
+
   handleRegister = async (formData) => {
     try{
     const registerUser = await fetch('http://localhost:9000/users/register',{

@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
+import UserProfile from './UserProfile';
+import ExerciseShow from './ExerciseShow';
+import Contact from './Contact';
 import {
   Collapse,
   Navbar,
@@ -12,7 +15,8 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 
-class Navigation extends React.Component {
+
+class Navigation extends Component {
   constructor(props) {
     super(props);
 
@@ -30,42 +34,33 @@ class Navigation extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="http://localhost:3000/">Home</NavbarBrand>
+          <NavbarBrand href="/profile">Profile</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Profile</NavLink>
+                <NavLink href="/contact">Contact</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Contact</NavLink>
+                <NavLink href="http://localhost:9000/users/logout">Logout</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
+              {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Menu
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>
-                    Cardio
+                  <DropdownItem href="/profile">
+                  Profile
                   </DropdownItem>
                   <DropdownItem>
-                    Core
-                  </DropdownItem>
-                  <DropdownItem>
-                    Strength
-                  </DropdownItem>
-                  <DropdownItem>
-                    Functional
-                  </DropdownItem>
-                  <DropdownItem>
-                    Flexability
+                    Contact
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem href="http://localhost:9000/users/logout">
                     Logout
                   </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
+              </UncontrolledDropdown> */}
             </Nav>
           </Collapse>
         </Navbar>
